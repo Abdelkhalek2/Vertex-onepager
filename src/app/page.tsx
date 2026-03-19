@@ -9,7 +9,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
 import MarqueeSection from "@/components/MarqueeSection";
-import ServicesSection from "@/components/ServicesSection";
+import InteractiveServices from "@/components/InteractiveServices";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
@@ -64,7 +64,7 @@ export default function Home() {
           <StatsSection />
           <AboutSection />
           <MarqueeSection />
-          <ServicesSection />
+          <InteractiveServices />
           <PortfolioSection />
           <TestimonialsSection />
           <ContactSection />

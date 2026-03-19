@@ -1715,3 +1715,50 @@ canvas+div {
     font-size: 0.75rem;
   }
 }
+
+/* ─── Interactive Services Responsive Grid ──────────────────────── */
+.services-desktop-ui {
+  display: grid;
+  grid-template-columns: 1fr clamp(180px, 18vw, 240px) 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-mobile-ui {
+  display: block;
+  margin-top: 3rem;
+}
+
+.mobile-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+
+.mobile-service-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  border: none;
+  font-family: inherit;
+}
+
+@media (min-width: 1024px) {
+  .services-mobile-ui {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .services-desktop-ui {
+    display: none;
+  }
+}
