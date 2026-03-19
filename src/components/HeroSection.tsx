@@ -189,7 +189,7 @@ export default function HeroSection() {
     };
 
     return (
-        <section ref={sectionRef} className="hero px-5 md:px-10 lg:px-[6vw]" id="home">
+        <section ref={sectionRef} className="hero px-5 md:px-10 lg:px-[6vw] overflow-visible lg:overflow-hidden" id="home">
             {/* Cinematic grain overlay */}
             <div className="hero-grain" />
 
@@ -257,10 +257,9 @@ export default function HeroSection() {
                 <div style={{
                     position: 'relative',
                     width: '100%',
-                    overflow: 'hidden',
                     display: 'flex',
                     alignItems: 'flex-start'
-                }} className="h-[350px] md:h-[450px] lg:h-[650px] relative">
+                }} className="h-[350px] md:h-[450px] lg:h-[650px] relative overflow-visible lg:overflow-hidden">
 
 
 
@@ -271,7 +270,11 @@ export default function HeroSection() {
                             width: '100%',
                             height: '750px', // Extra height for clipping
                             position: 'relative',
-                            transform: 'translateY(-60px)', // Raised UP significantly
+                            // @ts-ignore
+                            '--hero-y': '-60px',
+                            // @ts-ignore
+                            '--hero-scale': '1',
+                            transform: 'translateY(var(--hero-y)) scale(var(--hero-scale))',
                             transformStyle: "preserve-3d",
                             willChange: "transform",
                             // NUCLEAR OPTION: Physically crop the bottom 10% of the canvas where the watermark lives
@@ -281,7 +284,7 @@ export default function HeroSection() {
                             WebkitMaskImage: 'linear-gradient(to bottom, black 90%, transparent 98%)',
                             maskImage: 'linear-gradient(to bottom, black 90%, transparent 98%)'
                         }}
-                        className="z-0"
+                        className="z-0 overflow-visible"
                     >
                         {/* INVISIBLE SHIELD: Blocks Spline interaction */}
                         <div style={{
@@ -296,7 +299,7 @@ export default function HeroSection() {
 
                         <Spline
                             scene="https://prod.spline.design/5ZDYg02Zy6cXaeaX/scene.splinecode"
-                            className="w-full h-full"
+                            className="w-full h-full !overflow-visible"
                         />
                     </div>
 
